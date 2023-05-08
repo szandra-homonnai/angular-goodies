@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="row p-3">
+    <div class="col">
+      <mat-form-field>
+        <input matInput required="true" placeholder="Basic input">
+      </mat-form-field>
+    </div>
+
+    <div class="col">
+      <mat-form-field>
+        <input matInput #input1 [(ngModel)]="value1" required="true" placeholder="Basic input & ngModel">
+      </mat-form-field>
+      <p>value: {{ input1.value| json }}</p>
+      <p>validity: {{ input1.validity| json }}</p>
+    </div>
+
+    <div class="col">
+      <mat-form-field>
+        <input matInput [formControl]="testControl" required="true" placeholder="Basic input & form control">
+      </mat-form-field>
+      <p>value: {{ testControl.value | json }}</p>
+      <p>invalid: {{ testControl.invalid | json }}</p>
+      <p>touched: {{ testControl.touched | json }}</p>
+      <p>errors: {{ testControl.errors | json }}</p>
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="row p-3">
+    <div class="col">
+      <mat-form-field>
+        <app-custom-mat-form-field #input2 [(ngModel)]="value2" [required]="true"
+          placeholder="Custom input with ngModel"></app-custom-mat-form-field>
+      </mat-form-field>
+      <p>value: {{ input2.value| json }}</p>
+      <p>errorState: {{ input2.errorState| json }}</p>
+    </div>
+
+    <div class="col">
+      <mat-form-field>
+        <app-custom-mat-form-field [formControl]="customControl" [required]="true" placeholder="Required">
+        </app-custom-mat-form-field>
+      </mat-form-field>
+      <p>value: {{ customControl.value | json }}</p>
+      <p>invalid: {{ customControl.invalid | json }}</p>
+      <p>touched: {{ customControl.touched | json }}</p>
+      <p>errors: {{ customControl.errors | json }}</p>
+    </div>
+
+    <div class="col">
+      <mat-form-field>
+        <app-custom-mat-form-field [formControl]="customControl2" [required]="true" placeholder="MinLenght: 3">
+        </app-custom-mat-form-field>
+      </mat-form-field>
+      <p>value: {{ customControl2.value | json }}</p>
+      <p>invalid: {{ customControl2.invalid | json }}</p>
+      <p>touched: {{ customControl2.touched | json }}</p>
+      <p>errors: {{ customControl2.errors | json }}</p>
+    </div>
+
+    <div class="col">
+      <mat-form-field>
+        <app-custom-mat-form-field [formControl]="customControl3" placeholder="Disabled">
+        </app-custom-mat-form-field>
+        <mat-hint>This field is disabled.</mat-hint>
+      </mat-form-field>
+      <p>value: {{ customControl.value | json }}</p>
+      <p>invalid: {{ customControl.invalid | json }}</p>
+      <p>touched: {{ customControl.touched | json }}</p>
+      <p>errors: {{ customControl.errors | json }}</p>
+    </div>
+  </div>
+</div>
