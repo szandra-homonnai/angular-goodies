@@ -7,10 +7,8 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./custom-mat-form-field-example.component.scss']
 })
 export class CustomMatFormFieldExampleComponent {
-  public value1: string = 'test value';
-  public value2: string = 'other value';
-  public testControl: FormControl = new FormControl(null, Validators.required);
-  public customControl: FormControl = new FormControl(null, Validators.required);
+  public customValue: string = '';
+  public customControl: FormControl<string> = new FormControl(null, Validators.required);
   public customControl2: FormControl = new FormControl(null, [Validators.required, Validators.minLength(3)]);
   public customControl3: FormControl = new FormControl({ value: 'Test Value', disabled: true });
 }
