@@ -9,6 +9,7 @@ import { Subject } from 'rxjs';
   selector: 'app-custom-mat-form-field',
   templateUrl: './custom-mat-form-field.component.html',
   styleUrls: ['./custom-mat-form-field.component.scss'],
+  standalone: true,
   providers: [{
     provide: MatFormFieldControl, useExisting: CustomMatFormFieldComponent
   }]
